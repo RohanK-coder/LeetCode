@@ -12,7 +12,8 @@ public class AllSortingAlgos {
         }
 
         //int[] resultArr = selectionSort(arr,n);
-        int[] resultArr = bubbleSort(arr,n);
+        //int[] resultArr = bubbleSort(arr,n);
+        int[] resultArr = insertionSort(arr,n);
         System.out.println(Arrays.toString(resultArr));
         
     }
@@ -22,7 +23,7 @@ public class AllSortingAlgos {
         int temp = 0;
         for(int i=0;i<n;i++){
             int min = i;
-            for(int j=i+1;j<n;j++)1111
+            for(int j=i+1;j<n;j++)
             {
                 if(arr[j]<arr[min]){
                     min = j;
@@ -53,6 +54,20 @@ public class AllSortingAlgos {
     }
 
     //Insertion Sort
+    public static int[] insertionSort(int[] arr, int n){
+        int temp=0;
+        for(int i=0;i<n-1;i++){
+            for(int j=i+1;j>0;j--){
+                if(arr[j]<arr[j-1]){
+                    temp=arr[j];
+                    arr[j]=arr[j-1];
+                    arr[j-1]=temp;
+                }
+                else break;
+            }
+        }
+        return arr;
+    }
     
     
 }
